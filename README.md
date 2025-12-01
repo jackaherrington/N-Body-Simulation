@@ -133,14 +133,6 @@ export OMP_NUM_THREADS=8
 - **N ≥ 10,000**: CUDA provides significant acceleration  
 - **N ≥ 50,000**: CUDA strongly recommended (10x+ speedup)
 
-## 🤝 Contributing
-
-Contributions welcome! Areas for improvement:
-
-- **GPU Memory Optimization**: Keep data GPU-resident throughout simulation
-- **Multi-GPU Support**: Scale across multiple GPUs
-- **Advanced Algorithms**: Barnes-Hut tree methods for O(N log N) scaling
-- **Visualization**: Real-time 3D particle visualization
 
 ## 📊 Benchmarking
 
@@ -170,5 +162,3 @@ MIT License - see [LICENSE](LICENSE) file for details.
 **Repository**: https://github.com/jackaherrington/N-Body-Simulation  
 
 ---
-
-*Built with ❤️ for high-performance computing education*
