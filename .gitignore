@@ -1,0 +1,82 @@
+# Build artifacts
+build/
+*/build/
+**/build/
+
+# CMake generated files
+CMakeCache.txt
+CMakeFiles/
+CMakeScripts/
+Testing/
+Makefile
+cmake_install.cmake
+install_manifest.txt
+compile_commands.json
+CTestTestfile.cmake
+_deps
+
+# C++ compiled files
+*.o
+*.obj
+*.exe
+*.dll
+*.so
+*.dylib
+*.a
+*.lib
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Benchmark results (optional - you may want to commit some results)
+benchmarks/results/*.csv
+benchmarks/results/*.png
+
+# Temporary files
+*.tmp
+*.temp
+*.log
+
+# NVIDIA Nsight files
+*.nvproj
+*.nvproj.user
+*.suo
+
+# Core dumps
+core
+core.*
+
+# Python cache (for plotting scripts)
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
