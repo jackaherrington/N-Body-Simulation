@@ -42,8 +42,8 @@ gh repo create n-body-simulation --public --description "High-performance gravit
 ## 🔗 Step 3: Connect Local Repository to GitHub
 
 ```bash
-# Add remote origin (replace 'yourusername' with your GitHub username)
-git remote add origin https://github.com/yourusername/n-body-simulation.git
+# Add remote origin
+git remote add origin https://github.com/jackaherrington/N-Body-Simulation.git
 
 # Push to GitHub
 git branch -M main
@@ -186,9 +186,9 @@ Your N-Body simulation project is now professionally hosted on GitHub with:
 - 🛠️ **Easy build system** for reproducibility
 - 🤝 **Contribution guidelines** for future collaboration
 
-Your repository URL will be: `https://github.com/yourusername/n-body-simulation`
+Your repository URL will be: `https://github.com/jackaherrington/N-Body-Simulation`
 
-**Example of what your final repository could look like:**
-`https://github.com/yourusername/n-body-simulation`
+**Your final repository:**
+`https://github.com/jackaherrington/N-Body-Simulation`
 
 This creates an excellent portfolio piece demonstrating your parallel computing and high-performance computing skills! 🚀

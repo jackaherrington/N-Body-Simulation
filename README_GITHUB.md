@@ -1,6 +1,6 @@
 # N-Body Gravitational Simulation
 
-[![Build Status](https://img.shields.io/badge/build-passing-brightgreen)](https://github.com/yourusername/n-body-simulation)
+[![Build Status](https://img.shields.io/badge/build-passing-brightgreen)](https://github.com/jackaherrington/N-Body-Simulation)
 [![CUDA](https://img.shields.io/badge/CUDA-11.5+-blue)](https://developer.nvidia.com/cuda-downloads)
 [![OpenMP](https://img.shields.io/badge/OpenMP-4.5+-green)](https://www.openmp.org/)
 [![License](https://img.shields.io/badge/license-MIT-blue)](LICENSE)
@@ -35,8 +35,8 @@ High-performance gravitational N-body simulation with CPU and GPU acceleration. 
 
 ### Build
 ```bash
-git clone https://github.com/yourusername/n-body-simulation.git
-cd n-body-simulation
+git clone https://github.com/jackaherrington/N-Body-Simulation.git
+cd N-Body-Simulation
 mkdir build && cd build
 cmake .. -DCMAKE_BUILD_TYPE=Release -DENABLE_CUDA=ON
 make -j$(nproc)
@@ -165,9 +165,9 @@ MIT License - see [LICENSE](LICENSE) file for details.
 
 ## 📧 Contact
 
-**Author**: Jack  
+**Author**: Jack Herrington  
 **Project**: High-Performance N-Body Gravitational Simulation  
-**Course**: Parallel Computing  
+**Repository**: https://github.com/jackaherrington/N-Body-Simulation  
 
 ---
 

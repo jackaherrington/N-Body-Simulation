@@ -5,7 +5,7 @@ import numpy as np
 
 print("Loading benchmark data...")
 # Read the data
-df = pd.read_csv('benchmark_results.csv')
+df = pd.read_csv('results/benchmark_results.csv')
 
 # Clean up the data - remove 'RESULT' prefix and convert to numeric
 df['Backend'] = df['Backend'].str.replace('RESULT', '').str.strip()
@@ -208,16 +208,26 @@ for n in problem_sizes:
     n_data = df[df['N'] == n]
     seq_time = n_data[n_data['Backend'] == 'seq']['Time_ms'].iloc[0]
     
-    # CUDA speedup
-    cuda_time = n_data[n_data['Backend'] == 'cuda']['Time_ms'].iloc[0]
-    cuda_speedups.append(seq_time / cuda_time)
+    # CUDA speedup (if available)
+    cuda_data = n_data[n_data['Backend'] == 'cuda']
+    if not cuda_data.empty:
+        cuda_time = cuda_data['Time_ms'].iloc[0]
+        cuda_speedups.append(seq_time / cuda_time)
+    else:
+        cuda_speedups.append(0)  # No CUDA data available
     
     # Best OpenMP speedup
     omp_times = n_data[n_data['Backend'] == 'omp']['Time_ms']
     best_omp_time = omp_times.min()
     best_omp_speedups.append(seq_time / best_omp_time)
 
-ax6.semilogx(problem_sizes, cuda_speedups, '^-', color='red', label='CUDA', linewidth=2, markersize=8)
+# Filter valid CUDA data
+valid_cuda_indices = [i for i, s in enumerate(cuda_speedups) if s > 0]
+valid_cuda_speedups = [cuda_speedups[i] for i in valid_cuda_indices]
+valid_cuda_sizes = [problem_sizes[i] for i in valid_cuda_indices]
+
+if valid_cuda_speedups:
+    ax6.semilogx(valid_cuda_sizes, valid_cuda_speedups, '^-', color='red', label='CUDA', linewidth=2, markersize=8)
 ax6.semilogx(problem_sizes, best_omp_speedups, 's-', color='orange', label='OpenMP (Best)', linewidth=2, markersize=8)
 ax6.axhline(y=1, color='black', linestyle='--', alpha=0.5, label='No Speedup')
 ax6.set_xlabel('Problem Size (N particles)')
